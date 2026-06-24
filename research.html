@@ -7,16 +7,42 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: Georgia, serif; color: #222; background: #fff; line-height: 1.7; }
-    header { background: #1a3a5c; color: white; padding: 50px 40px; }
-    header h1 { font-size: 2.2em; margin-bottom: 6px; }
-    header p { font-size: 1.1em; opacity: 0.85; }
-    nav { background: #f4f4f4; border-bottom: 1px solid #ddd; padding: 12px 40px; }
-    nav a { margin-right: 24px; text-decoration: none; color: #1a3a5c; font-family: Arial, sans-serif; font-size: 0.95em; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
+
+    nav {
+      background: #1a3a5c;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    nav .site-title {
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 1em;
+      font-weight: bold;
+      padding: 18px 0;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+    }
+    nav .nav-links a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: 0.9em;
+      margin-left: 28px;
+      padding: 18px 0;
+      display: inline-block;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    nav .nav-links a:hover {
+      color: white;
+      border-bottom-color: rgba(255,255,255,0.6);
+    }
+
     main { max-width: 780px; margin: 50px auto; padding: 0 30px; }
     section { margin-bottom: 50px; }
-    h2 { font-size: 1.4em; color: #1a3a5c; border-bottom: 2px solid #1a3a5c; padding-bottom: 6px; margin-bottom: 16px; }
-    h3 { font-size: 1.05em; color: #222; margin: 20px 0 4px; }
+    h2 { font-family: Arial, sans-serif; font-size: 1.1em; text-transform: uppercase; letter-spacing: 0.08em; color: #1a3a5c; border-bottom: 1px solid #c8d8e8; padding-bottom: 6px; margin-bottom: 16px; }
     p { margin-bottom: 12px; }
     ul { padding-left: 20px; }
     ul li { margin-bottom: 8px; }
@@ -29,20 +55,18 @@
 </head>
 <body>
 
-<header>
-  <h1>David H. Nason</h1>
-  <p>Postdoctoral Researcher &mdash; WVU Regional Research Institute</p>
-</header>
-
 <nav>
-  <a href="index.html">Home</a>
-  <a href="research.html">Research</a>
-  <a href="cv.html">CV</a>
+  <a class="site-title" href="index.html">David H. Nason</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="cv.html">CV</a>
+  </div>
 </nav>
 
 <main>
 
- <section>
+  <section>
     <h2>Peer-Reviewed Articles</h2>
     <div class="pub">
       <p>Dobis, Elizabeth A., David H. Nason, John Cromartie, and Kyle Reed. "Rugged terrain measures
@@ -59,6 +83,7 @@
     <div class="pub">
       <p>Hoffer, Adam J., Brad R. Humphreys, David H. Nason, Joseph Nedved, and Amir B. Ferreira Neto.
       "Sports Betting, Lotteries, and State Revenues in the Post-PASPA Era."
+      <em>Under review at Public Finance Review.</em></p>
       <p class="links">
         <a href="https://papers.ssrn.com/sol3/Delivery.cfm/6294538.pdf?abstractid=6294538&mirid=1&type=2">[Working Paper]</a>
       </p>
@@ -66,6 +91,7 @@
     <div class="pub">
       <p>Nason, David H., Adam Scavette, and Heather M. Stephens.
       "The Local Economic Effects of Coal Mine Closures."
+      <em>Under review at The Economic Journal.</em></p>
       <p class="links">
         <a href="https://www.philadelphiafed.org/-/media/FRBP/Assets/working-papers/2026/wp26-30.pdf">[Working Paper]</a>
       </p>
@@ -116,6 +142,7 @@
       </p>
     </div>
   </section>
+
 
 </main>
 
