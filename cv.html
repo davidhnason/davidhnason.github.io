@@ -51,6 +51,7 @@
 
     .sidebar {
       flex: 0 0 200px;
+      width: 200px;
       text-align: center;
     }
 
@@ -96,7 +97,10 @@
 
     .sidebar-links a:hover { text-decoration: underline; }
 
-    .cv-content { flex: 1; }
+    .cv-content {
+      flex: 1;
+      min-width: 0;
+    }
 
     .cv-content h2 {
       font-family: Arial, sans-serif;
