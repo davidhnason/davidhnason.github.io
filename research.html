@@ -40,9 +40,90 @@
       border-bottom-color: rgba(255,255,255,0.6);
     }
 
-    main { max-width: 780px; margin: 50px auto; padding: 0 30px; }
+    main {
+      max-width: 960px;
+      margin: 50px auto;
+      padding: 0 30px;
+      display: flex;
+      gap: 50px;
+      align-items: flex-start;
+    }
+
+    .sidebar {
+      flex: 0 0 200px;
+      text-align: center;
+    }
+
+    .sidebar img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 20%;
+      border: 3px solid #e0e0e0;
+      margin-bottom: 16px;
+    }
+
+    .sidebar h1 {
+      font-size: 1.15em;
+      color: #1a3a5c;
+      margin-bottom: 4px;
+      font-family: Arial, sans-serif;
+    }
+
+    .sidebar .position {
+      font-family: Arial, sans-serif;
+      font-size: 0.82em;
+      color: #555;
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+
+    .sidebar-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      font-size: 0.88em;
+    }
+
+    .sidebar-links li { margin-bottom: 7px; }
+
+    .sidebar-links a {
+      color: #1a3a5c;
+      text-decoration: none;
+    }
+
+    .sidebar-links a:hover { text-decoration: underline; }
+
+    .sidebar-links .cv-btn {
+      display: inline-block;
+      margin-top: 10px;
+      background: #1a3a5c;
+      color: white;
+      padding: 7px 20px;
+      border-radius: 3px;
+      font-size: 0.88em;
+      text-decoration: none;
+    }
+
+    .sidebar-links .cv-btn:hover { background: #122840; }
+
+    .content { flex: 1; }
+
     section { margin-bottom: 50px; }
-    h2 { font-family: Arial, sans-serif; font-size: 1.1em; text-transform: uppercase; letter-spacing: 0.08em; color: #1a3a5c; border-bottom: 1px solid #c8d8e8; padding-bottom: 6px; margin-bottom: 16px; }
+
+    h2 {
+      font-family: Arial, sans-serif;
+      font-size: 1.1em;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #1a3a5c;
+      border-bottom: 1px solid #c8d8e8;
+      padding-bottom: 6px;
+      margin-bottom: 16px;
+    }
+
     p { margin-bottom: 12px; }
     ul { padding-left: 20px; }
     ul li { margin-bottom: 8px; }
@@ -50,7 +131,21 @@
     .pub p { margin-bottom: 4px; }
     a { color: #1a3a5c; }
     .links a { font-family: Arial, sans-serif; font-size: 0.9em; margin-right: 8px; }
-    footer { text-align: center; padding: 30px; font-size: 0.85em; color: #888; border-top: 1px solid #eee; font-family: Arial, sans-serif; }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.82em;
+      color: #aaa;
+      border-top: 1px solid #eee;
+      font-family: Arial, sans-serif;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 650px) {
+      main { flex-direction: column; gap: 30px; }
+      .sidebar { flex: none; width: 100%; }
+    }
   </style>
 </head>
 <body>
@@ -66,84 +161,102 @@
 
 <main>
 
-  <section>
-    <h2>Peer-Reviewed Articles</h2>
-    <div class="pub">
-      <p>Dobis, Elizabeth A., David H. Nason, John Cromartie, and Kyle Reed. "Rugged terrain measures
-      for social science research: Applying the Area and Road Ruggedness Scales to counties."
-      <em>Agricultural and Resource Economics Review</em> 54, no. 1 (April 2025): 243–59.</p>
-      <p class="links">
-        <a href="https://doi.org/10.1017/age.2025.12">[DOI]</a>
-      </p>
-    </div>
-  </section>
+  <aside class="sidebar">
+    <img src="photo.jpg" alt="David H. Nason">
+    <h1>David H. Nason</h1>
+    <p class="position">
+      Postdoctoral Researcher<br>
+      Regional Research Institute<br>
+      West Virginia University
+    </p>
+    <ul class="sidebar-links">
+      <li>📧 <a href="mailto:dhn0003@mail.wvu.edu">dhn0003@mail.wvu.edu</a></li>
+      <li>🔗 <a href="https://orcid.org/0009-0001-4734-6725" target="_blank">ORCID</a></li>
+      <li>🔗 <a href="https://www.linkedin.com/in/david-nason-4a5355150" target="_blank">LinkedIn</a></li>
+      <li><a class="cv-btn" href="DavidNasonCV_June26.pdf" download>⬇ Download CV</a></li>
+    </ul>
+  </aside>
 
-  <section>
-    <h2>Under Review</h2>
-    <div class="pub">
-      <p>Hoffer, Adam J., Brad R. Humphreys, David H. Nason, Joseph Nedved, and Amir B. Ferreira Neto.
-      "Sports Betting, Lotteries, and State Revenues in the Post-PASPA Era."
-      <em>Under review at Public Finance Review.</em></p>
-      <p class="links">
-        <a href="https://papers.ssrn.com/sol3/Delivery.cfm/6294538.pdf?abstractid=6294538&mirid=1&type=2">[Working Paper]</a>
-      </p>
-    </div>
-    <div class="pub">
-      <p>Nason, David H., Adam Scavette, and Heather M. Stephens.
-      "The Local Economic Effects of Coal Mine Closures."
-      <em>Under review at The Economic Journal.</em></p>
-      <p class="links">
-        <a href="https://www.philadelphiafed.org/-/media/FRBP/Assets/working-papers/2026/wp26-30.pdf">[Working Paper]</a>
-      </p>
-    </div>
-  </section>
+  <div class="content">
 
-  <section>
-    <h2>Works in Progress</h2>
-    <div class="pub">
-      <p>Nason, David H. "Evaluating the Impact of Place-Based Jobs Policies in Distressed Areas."</p>
-      <p class="links">
-        <a href="https://researchrepository.wvu.edu/cgi/viewcontent.cgi?article=1227&context=rri_pubs">[Working Paper]</a>
-      </p>
-    </div>
-    <div class="pub">
-      <p>Nason, David H. and Heather M. Stephens. "The Spatial Distribution of Skills and Local Labor Market Resilience."</p>
-      <p class="links">
-        <a href="https://researchrepository.wvu.edu/cgi/viewcontent.cgi?article=1223&context=rri_pubs">[Working Paper]</a>
-      </p>
-    </div>
-    <div class="pub">
-      <p>Nason, David H. "Local Labor Market Effects of Changes in Employer Skill Demand." <em>In Preparation.</em></p>
-    </div>
-    <div class="pub">
-      <p>Li, Xiaoyin, David H. Nason, and Heather M. Stephens. "Skill-based Occupational Connectivity and Local Labor Market Development."</p>
-      <p class="links">
-        <a href="https://researchrepository.wvu.edu/cgi/viewcontent.cgi?article=1226&context=rri_pubs">[Working Paper]</a>
-      </p>
-    </div>
-  </section>
+    <section>
+      <h2>Peer-Reviewed Articles</h2>
+      <div class="pub">
+        <p>Dobis, Elizabeth A., David H. Nason, John Cromartie, and Kyle Reed. "Rugged terrain measures
+        for social science research: Applying the Area and Road Ruggedness Scales to counties."
+        <em>Agricultural and Resource Economics Review</em> 54, no. 1 (April 2025): 243–59.</p>
+        <p class="links">
+          <a href="https://doi.org/10.1017/age.2025.12">[DOI]</a>
+        </p>
+      </div>
+    </section>
 
-  <section>
-    <h2>Reports</h2>
-    <div class="pub">
-      <p>Pipa, Anthony F., Heather M. Stephens, David H. Nason, and Zoe Swarzenski (2025).
-      "Unlocking Investment in Distressed Rural Places: Comparing the Infrastructure Funding of
-      Select Federally Chartered Regional Commissions Versus Federal Programs."
-      <em>The Brookings Institution.</em></p>
-      <p class="links">
-        <a href="https://www.brookings.edu/articles/unlocking-investment-in-distressed-rural-places/">[Report]</a>
-      </p>
-    </div>
-    <div class="pub">
-      <p>Higgins, J., David H. Nason, and John Shannon. "Commuting Patterns in Southwest Florida."
-      <em>FGCU Regional Economic Research Institute Issue Brief</em> (IBS-2025-06).</p>
-      <p class="links">
-        <a href="https://www.fgcu.edu/cob/reri/files/ibs/ibs202506.pdf">[Report]</a>
-      </p>
-    </div>
-  </section>
+    <section>
+      <h2>Under Review</h2>
+      <div class="pub">
+        <p>Hoffer, Adam J., Brad R. Humphreys, David H. Nason, Joseph Nedved, and Amir B. Ferreira Neto.
+        "Sports Betting, Lotteries, and State Revenues in the Post-PASPA Era."
+        <em>Under review at Public Finance Review.</em></p>
+        <p class="links">
+          <a href="https://papers.ssrn.com/sol3/Delivery.cfm/6294538.pdf?abstractid=6294538&mirid=1&type=2">[Working Paper]</a>
+        </p>
+      </div>
+      <div class="pub">
+        <p>Nason, David H., Adam Scavette, and Heather M. Stephens.
+        "The Local Economic Effects of Coal Mine Closures."
+        <em>Under review at The Economic Journal.</em></p>
+        <p class="links">
+          <a href="https://www.philadelphiafed.org/-/media/FRBP/Assets/working-papers/2026/wp26-30.pdf">[Working Paper]</a>
+        </p>
+      </div>
+    </section>
 
+    <section>
+      <h2>Works in Progress</h2>
+      <div class="pub">
+        <p>Nason, David H. "Evaluating the Impact of Place-Based Jobs Policies in Distressed Areas."</p>
+        <p class="links">
+          <a href="https://researchrepository.wvu.edu/cgi/viewcontent.cgi?article=1227&context=rri_pubs">[Working Paper]</a>
+        </p>
+      </div>
+      <div class="pub">
+        <p>Nason, David H. and Heather M. Stephens. "The Spatial Distribution of Skills and Local Labor Market Resilience."</p>
+        <p class="links">
+          <a href="https://researchrepository.wvu.edu/cgi/viewcontent.cgi?article=1223&context=rri_pubs">[Working Paper]</a>
+        </p>
+      </div>
+      <div class="pub">
+        <p>Nason, David H. "Local Labor Market Effects of Changes in Employer Skill Demand." <em>In Preparation.</em></p>
+      </div>
+      <div class="pub">
+        <p>Li, Xiaoyin, David H. Nason, and Heather M. Stephens. "Skill-based Occupational Connectivity and Local Labor Market Development."</p>
+        <p class="links">
+          <a href="https://researchrepository.wvu.edu/cgi/viewcontent.cgi?article=1226&context=rri_pubs">[Working Paper]</a>
+        </p>
+      </div>
+    </section>
 
+    <section>
+      <h2>Reports</h2>
+      <div class="pub">
+        <p>Pipa, Anthony F., Heather M. Stephens, David H. Nason, and Zoe Swarzenski (2025).
+        "Unlocking Investment in Distressed Rural Places: Comparing the Infrastructure Funding of
+        Select Federally Chartered Regional Commissions Versus Federal Programs."
+        <em>The Brookings Institution.</em></p>
+        <p class="links">
+          <a href="https://www.brookings.edu/articles/unlocking-investment-in-distressed-rural-places/">[Report]</a>
+        </p>
+      </div>
+      <div class="pub">
+        <p>Higgins, J., David H. Nason, and John Shannon. "Commuting Patterns in Southwest Florida."
+        <em>FGCU Regional Economic Research Institute Issue Brief</em> (IBS-2025-06).</p>
+        <p class="links">
+          <a href="https://www.fgcu.edu/cob/reri/files/ibs/ibs202506.pdf">[Report]</a>
+        </p>
+      </div>
+    </section>
+
+  </div>
 </main>
 
 <footer>&copy; 2026 David H. Nason</footer>
