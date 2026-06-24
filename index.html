@@ -6,57 +6,239 @@
   <title>David H. Nason</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Georgia, serif; color: #222; background: #fff; line-height: 1.7; }
-    header { background: #1a3a5c; color: white; padding: 50px 40px; }
-    header h1 { font-size: 2.2em; margin-bottom: 6px; }
-    header p { font-size: 1.1em; opacity: 0.85; }
-    nav { background: #f4f4f4; border-bottom: 1px solid #ddd; padding: 12px 40px; }
-    nav a { margin-right: 24px; text-decoration: none; color: #1a3a5c; font-family: Arial, sans-serif; font-size: 0.95em; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
-    main { max-width: 780px; margin: 50px auto; padding: 0 30px; }
-    section { margin-bottom: 50px; }
-    h2 { font-size: 1.4em; color: #1a3a5c; border-bottom: 2px solid #1a3a5c; padding-bottom: 6px; margin-bottom: 16px; }
+
+    body {
+      font-family: Georgia, serif;
+      color: #222;
+      background: #fff;
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    /* ── Nav ── */
+    nav {
+      background: #1a3a5c;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    nav .site-title {
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 1em;
+      font-weight: bold;
+      padding: 18px 0;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+    }
+
+    nav .nav-links a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: 0.9em;
+      margin-left: 28px;
+      padding: 18px 0;
+      display: inline-block;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    nav .nav-links a:hover {
+      color: white;
+      border-bottom-color: rgba(255,255,255,0.6);
+    }
+
+    /* ── Main layout ── */
+    main {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 30px;
+      display: flex;
+      gap: 60px;
+      align-items: flex-start;
+    }
+
+    /* ── Left column ── */
+    .sidebar {
+      flex: 0 0 200px;
+      text-align: center;
+    }
+
+    .sidebar img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #e0e0e0;
+      margin-bottom: 16px;
+    }
+
+    /* Placeholder shown until photo is added */
+    .photo-placeholder {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: #e8eef4;
+      border: 3px solid #c8d8e8;
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #7a99b8;
+      font-family: Arial, sans-serif;
+      font-size: 0.8em;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .sidebar h1 {
+      font-size: 1.15em;
+      color: #1a3a5c;
+      margin-bottom: 4px;
+      font-family: Arial, sans-serif;
+    }
+
+    .sidebar .position {
+      font-family: Arial, sans-serif;
+      font-size: 0.82em;
+      color: #555;
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+
+    .sidebar-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      font-size: 0.88em;
+    }
+
+    .sidebar-links li {
+      margin-bottom: 7px;
+    }
+
+    .sidebar-links a {
+      color: #1a3a5c;
+      text-decoration: none;
+    }
+
+    .sidebar-links a:hover {
+      text-decoration: underline;
+    }
+
+    .sidebar-links .cv-btn {
+      display: inline-block;
+      margin-top: 10px;
+      background: #1a3a5c;
+      color: white;
+      padding: 7px 20px;
+      border-radius: 3px;
+      font-size: 0.88em;
+      text-decoration: none;
+    }
+
+    .sidebar-links .cv-btn:hover {
+      background: #122840;
+    }
+
+    /* ── Right column ── */
+    .content { flex: 1; }
+
+    .content h2 {
+      font-family: Arial, sans-serif;
+      font-size: 1.1em;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #1a3a5c;
+      border-bottom: 1px solid #c8d8e8;
+      padding-bottom: 6px;
+      margin: 0 0 14px;
+    }
+
+    section { margin-bottom: 40px; }
+
     p { margin-bottom: 12px; }
-    ul { padding-left: 20px; }
-    ul li { margin-bottom: 6px; }
-    a { color: #1a3a5c; }
-    .contact-line { font-family: Arial, sans-serif; font-size: 0.95em; margin-bottom: 6px; }
-    footer { text-align: center; padding: 30px; font-size: 0.85em; color: #888; border-top: 1px solid #eee; font-family: Arial, sans-serif; }
+
+    ul {
+      padding-left: 18px;
+    }
+
+    ul li { margin-bottom: 5px; }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.82em;
+      color: #aaa;
+      border-top: 1px solid #eee;
+      font-family: Arial, sans-serif;
+      margin-top: 40px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 650px) {
+      main { flex-direction: column; gap: 30px; }
+      .sidebar { flex: none; width: 100%; }
+    }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>David H. Nason</h1>
-  <p>Postdoctoral Researcher &mdash; WVU Regional Research Institute</p>
-</header>
-
 <nav>
-  <a href="index.html">Home</a>
-  <a href="research.html">Research</a>
-  <a href="cv.html">CV</a>
+  <a class="site-title" href="index.html">David H. Nason</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="cv.html">CV</a>
+  </div>
 </nav>
 
 <main>
-  <section id="about">
-    <h2>About</h2>
-    <p>
-      I am a Postdoctoral Researcher at the Regional Research Institute at West Virginia University.
-      I hold a Ph.D. in Natural Resource Economics from West Virginia University (2025), with fields
-      in Urban &amp; Regional Economics and Natural Resource &amp; Environmental Economics.
-    </p>
-    <p>
-      My research focuses on how local labor markets adjust to structural economic changes, with a goal
-      of providing policy-relevant insights to inform workforce development in rural and distressed areas.
-      My work spans labor markets, industrial transitions, human capital, and regional growth.
-    </p>
-  </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p class="contact-line">📧 <a href="mailto:dhn0003@mail.wvu.edu">dhn0003@mail.wvu.edu</a></p>
-    <p class="contact-line">🏛 Regional Research Institute, West Virginia University, Morgantown, WV</p>
-  </section>
+  <!-- LEFT: photo + links -->
+  <aside class="sidebar">
+
+    <!-- Once you have a photo, replace the div below with:
+         <img src="photo.jpg" alt="David H. Nason"> -->
+    <div class="photo-placeholder">Your photo<br>goes here</div>
+
+    <h1>David H. Nason</h1>
+    <p class="position">
+      Postdoctoral Researcher<br>
+      Regional Research Institute<br>
+      West Virginia University
+    </p>
+
+    <ul class="sidebar-links">
+      <li>📧 <a href="mailto:dhn0003@mail.wvu.edu">dhn0003@mail.wvu.edu</a></li>
+      <li>🔗 <a href="https://orcid.org/0009-0001-4734-6725" target="_blank">ORCID</a></li>
+      <li>🔗 <a href="https://www.linkedin.com/in/david-nason-4a5355150" target="_blank">LinkedIn</a></li>
+      <li><a class="cv-btn" href="cv.pdf" download>⬇ Download CV</a></li>
+    </ul>
+  </aside>
+
+  <!-- RIGHT: bio + interests -->
+  <div class="content">
+
+    <section>
+      <h2>About</h2>
+      <p>
+        I am a Postdoctoral Researcher at the Regional Research Institute at West Virginia University.
+        I hold a Ph.D. in Natural Resource Economics from West Virginia University (2025), with fields
+        in Urban &amp; Regional Economics and Natural Resource &amp; Environmental Economics.
+      </p>
+      <p>
+        My research focuses on how local labor markets adjust to structural economic changes, with a goal
+        of providing policy-relevant insights to inform workforce development in rural and distressed areas.
+        My work spans labor markets, industrial transitions, human capital, and regional growth.
+      </p>
+    </section>
+
+  </div>
 </main>
 
 <footer>&copy; 2026 David H. Nason</footer>
